@@ -1,9 +1,9 @@
 'use client';
 
-import * as TabsPrimitive from '@radix-ui/react-tabs';
-import * as React from 'react';
-
 import { cn } from '@/lib/utils';
+import * as TabsPrimitive from '@radix-ui/react-tabs';
+import { motion } from 'framer-motion';
+import * as React from 'react';
 
 type TabsContextProps = {
   selected: string;
@@ -64,7 +64,7 @@ Tabs.displayName = TabsPrimitive.Root.displayName;
  * -----------------------------------------------------------------*/
 const TabsIndicator = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.ComponentPropsWithoutRef<typeof motion.div>
 >((props, ref) => {
   const { className, style, ...rest } = props;
   const { activeTrigger, selected, orientation } = useTabsContext();
@@ -94,11 +94,11 @@ const TabsIndicator = React.forwardRef<
   }, [activeTrigger, selected]);
 
   return (
-    <div
+    <motion.div
       ref={ref}
       {...rest}
       className={cn(
-        'absolute rounded bg-white transition-transform ease-in-out will-change-transform',
+        'absolute rounded bg-white',
         orientation == 'horizontal'
           ? 'h-[calc(100%-8px)]'
           : 'w-[calc(100%-8px)]',
@@ -106,7 +106,15 @@ const TabsIndicator = React.forwardRef<
       )}
       style={{
         ...style,
-
+        ...(orientation == 'horizontal'
+          ? {
+              left: 0,
+            }
+          : {
+              top: 0,
+            }),
+      }}
+      animate={{
         ...(orientation == 'horizontal'
           ? {
               left: 0,

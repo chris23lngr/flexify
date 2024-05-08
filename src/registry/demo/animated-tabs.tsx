@@ -9,7 +9,7 @@ import {
 
 export default function AnimatedTabsDemo() {
   return (
-    <Tabs defaultValue="dashboard" orientation="horizontal">
+    <Tabs defaultValue="dashboard">
       <TabsList>
         <TabsIndicator />
         <TabsTrigger value="dashboard">Dashboard</TabsTrigger>

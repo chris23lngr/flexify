@@ -51,13 +51,13 @@ const ComponentSection = React.forwardRef<
           <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2">
             <div>
               <p className="text-sm font-medium text-foreground">Built with</p>
-              <div className="mt-4 flex items-center justify-start gap-4">
+              <div className="mt-4 flex flex-wrap items-center justify-start gap-4">
                 {component.dependencies.map((dep, index) => (
                   <Link
                     target="_blank"
                     key={`dep-${index}`}
                     href={dep.url || '#'}
-                    className="block rounded-full border border-border px-2 py-1 text-xs font-medium text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    className="block shrink-0 rounded-full border border-border px-2 py-1 text-xs font-medium text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     {dep.label}
                   </Link>
