@@ -28,7 +28,7 @@ export default async function AboutPage() {
             This project is a collection of flexible and reusable components for
             building websites and web applications. Please{' '}
             <span className="font-medium text-foreground">
-              don't consider this as a production-ready component library
+              don&apos;t consider this as a production-ready component library
             </span>
             , but rather as a playground for experimenting with different design
             patterns and component structures.
@@ -40,8 +40,8 @@ export default async function AboutPage() {
           </p>
           <p>
             Most of the components in Flexify are based on the components from
-            the amazing shadcn/ui library (I know they don't like to call it
-            that...).
+            the amazing shadcn/ui library (I know they don&apos;t like to call
+            it that...).
           </p>
           <p>For this project I used the following technologies and tools:</p>
           <ul className="!mt-4 list-disc space-y-1 pl-4">

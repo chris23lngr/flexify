@@ -91,7 +91,7 @@ const TabsIndicator = React.forwardRef<
       offset: offset,
       scale: scale,
     });
-  }, [activeTrigger, selected]);
+  }, [activeTrigger, selected, orientation]);
 
   return (
     <motion.div
