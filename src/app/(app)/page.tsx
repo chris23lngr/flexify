@@ -6,6 +6,7 @@ export default async function LandingPage() {
   return (
     <>
       <HeroSection />
+
       {Object.keys(Index).map((key, index) => (
         <ComponentSection key={`comp-sect-${key}-${index}`} name={key} />
       ))}

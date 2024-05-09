@@ -12,6 +12,10 @@ export const Index: Registry = {
         label: '@radix-ui/react-tabs',
         url: 'https://www.radix-ui.com/primitives/docs/components/tabs',
       },
+      {
+        label: 'framer-motion',
+        url: 'https://www.framer.com/motion/',
+      },
     ],
     demo: React.lazy(() => import('@/registry/demo/animated-tabs')),
   },

@@ -5,7 +5,7 @@ import {
   TabsIndicator,
   TabsList,
   TabsTrigger,
-} from '@/app/_components/tabs';
+} from '@/registry/ui/animated-tabs';
 
 export default function AnimatedTabsDemo() {
   return (
