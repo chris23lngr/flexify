@@ -36,7 +36,11 @@ const ComponentSection = React.forwardRef<
   const component = result.data;
 
   return (
-    <section ref={ref} {...rest} className="relative z-10 py-72">
+    <section
+      ref={ref}
+      {...rest}
+      className="relative z-10 border-t border-border py-44"
+    >
       <div className="container grid grid-cols-1 gap-8 lg:grid-cols-6">
         <div className="col-span-2">
           <ComponentSectionTitle
