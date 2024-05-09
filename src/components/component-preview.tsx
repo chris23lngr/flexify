@@ -29,7 +29,7 @@ const ComponentPreview = React.forwardRef<
       ref={ref}
       {...rest}
       className={cn(
-        'flex items-center justify-center rounded-lg border border-border bg-background p-8 shadow-md',
+        'ring-ring-accent relative flex items-center justify-center rounded-lg border border-border bg-card p-8 ring-4',
         className
       )}
     >

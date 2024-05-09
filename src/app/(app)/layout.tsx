@@ -1,3 +1,7 @@
+import { Footer } from '@/components/footer';
+import { Navbar } from '@/components/navbar';
+import Image from 'next/image';
+import GridBg from '../../../public/assets/grid-1024.jpg';
 export default async function AppLayout({
   children,
 }: {
@@ -5,16 +9,17 @@ export default async function AppLayout({
 }) {
   return (
     <>
+      {/* <GridStripes /> */}
       <main className="relative z-0">
-        <div className="container absolute left-1/2 top-0 z-0 grid h-full -translate-x-1/2 grid-cols-2 sm:grid-cols-4 lg:grid-cols-6">
-          <div className="h-full w-full border-l border-dashed border-border" />
-          <div className="hidden h-full w-full border-l border-dashed border-border sm:block" />
-          <div className="hidden h-full w-full border-l border-dashed border-border sm:block" />
-          <div className="hidden h-full w-full border-l border-dashed border-border lg:block" />
-          <div className="hidden h-full w-full border-l border-dashed border-border lg:block" />
-          <div className="h-full w-full border-x border-dashed border-border" />
-        </div>
+        <Navbar />
+        <Image
+          loading="eager"
+          src={GridBg}
+          alt=""
+          className="absolute left-1/2  -z-10 h-fit w-full max-w-screen-xl -translate-x-1/2 -translate-y-1/2 md:w-4/5 lg:w-2/3"
+        />
         {children}
+        <Footer />
       </main>
     </>
   );

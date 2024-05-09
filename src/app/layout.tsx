@@ -1,10 +1,9 @@
-import '@/styles/globals.css';
-import type { Metadata } from 'next';
-import { Inter as FontSans } from 'next/font/google';
-import localFont from 'next/font/local';
-
 import { TailwindIndicator } from '@/components/tw-indicator';
 import { cn } from '@/lib/utils';
+import '@/styles/globals.css';
+import type { Metadata, Viewport } from 'next';
+import { Inter as FontSans } from 'next/font/google';
+import localFont from 'next/font/local';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -24,16 +23,24 @@ export const metadata: Metadata = {
     'Reusable components for building websites and web applications.',
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className="bg-zinc-900">
+      <head />
       <body
         className={cn(
-          'min-h-screen font-sans antialiased',
+          'dark min-h-screen bg-background font-sans antialiased',
           fontSans.variable,
           fontDisplay.variable
         )}

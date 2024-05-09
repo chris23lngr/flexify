@@ -5,11 +5,11 @@ import {
   TabsIndicator,
   TabsList,
   TabsTrigger,
-} from '@/app/_components/tabs';
+} from '@/registry/ui/animated-tabs';
 
 export default function AnimatedTabsDemo() {
   return (
-    <Tabs defaultValue="dashboard">
+    <Tabs defaultValue="dashboard" orientation="horizontal">
       <TabsList>
         <TabsIndicator />
         <TabsTrigger value="dashboard">Dashboard</TabsTrigger>

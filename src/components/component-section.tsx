@@ -36,22 +36,22 @@ const ComponentSection = React.forwardRef<
   const component = result.data;
 
   return (
-    <section
-      id={`comp-${component.name}`}
-      ref={ref}
-      {...rest}
-      className="relative z-10 border-b border-dashed border-border py-72"
-    >
-      <div className="container grid grid-cols-1 space-y-12 lg:grid-cols-6 lg:space-y-0">
-        <div className="col-span-2 px-6 ">
-          <ComponentSectionTitle>{component.label}</ComponentSectionTitle>
+    <section ref={ref} {...rest} className="relative z-10 py-72">
+      <div className="container grid grid-cols-1 gap-8 lg:grid-cols-6">
+        <div className="col-span-2">
+          <ComponentSectionTitle
+            id={`comp-${component.name}`}
+            className="scroll-m-20"
+          >
+            {component.label}
+          </ComponentSectionTitle>
           <ComponentSectionDescription>
             {component.description}
           </ComponentSectionDescription>
-          <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
             <div>
               <p className="text-sm font-medium text-foreground">Built with</p>
-              <div className="mt-4 flex flex-wrap items-center justify-start gap-4">
+              <div className="mt-4 flex flex-wrap items-center justify-start gap-3">
                 {component.dependencies.map((dep, index) => (
                   <Link
                     target="_blank"
