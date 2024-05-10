@@ -1,5 +1,11 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'A word from the author.',
+};
 
 export default async function AboutPage() {
   return (
@@ -7,7 +13,7 @@ export default async function AboutPage() {
       <section id="header">
         <div className="container pb-12 pt-32">
           <div className="flex flex-col items-center justify-center gap-6">
-            <div className="ring-ring-accent h-12 w-12 overflow-hidden rounded-full border border-border ring-2">
+            <div className="h-12 w-12 overflow-hidden rounded-full border border-border ring-2 ring-ring-accent">
               <Image
                 src={'https://avatars.githubusercontent.com/u/41869956?v=8'}
                 alt=""

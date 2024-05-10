@@ -1,4 +1,5 @@
 import { TailwindIndicator } from '@/components/tw-indicator';
+import { siteConfig } from '@/lib/config/site';
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
 import type { Metadata, Viewport } from 'next';
@@ -18,9 +19,31 @@ const fontDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Flexify',
-  description:
-    'Reusable components for building websites and web applications.',
+  title: {
+    default: siteConfig.title,
+    template: '%s | Flexify',
+  },
+  description: siteConfig.description,
+  authors: [
+    {
+      name: 'Christoph Langer',
+      url: 'https://github.com/chris23lngr',
+    },
+  ],
+  category: 'website',
+  generator: 'Next.js',
+  keywords: [
+    'flexify',
+    'components',
+    'react',
+    'design',
+    'shadcn/ui',
+    'radix ui',
+    'tailwindcss',
+  ],
+  openGraph: {
+    title: siteConfig.title,
+  },
 };
 
 export const viewport: Viewport = {
